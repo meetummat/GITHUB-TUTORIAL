@@ -37,7 +37,9 @@
 
 # Using git:- 
 
-    * Big 4 commands - git init, git    status, git add, git commit -m     "Message".  
+* Big 4 commands - git init, git status, git add, git commit -m "Message".
+
+* After modifying we have to add and commit it.
 
 * Commands in git:- 
     1. git init - to initialze folder in a git.
@@ -48,11 +50,16 @@
 
     5. git add index.html - moved index.html from working directory to staging area.
     * we can also add many files with one git add command like "git add index.html style.css.
+    * git add . - we can add all the files in staging area with just "git add ." command.
 
     6. git commit -m "Message" - now we have commited files with the message, we can come back to this step from any step because of commiting this stage. 
     * we use "git commit with -m and with any message.
 
     7. git log - to see the whole commits, this will show who commited that and also date and time.
+
+    8. git log --oneline - it will show one commit in one line not unecessary. Latest commit will come with (Head --> main).
+
+    9. git restore --staged filename - with this command we can move file back to working directory from staging area.
 
 # 4 main locations where code is present when we use git
 1. Working Directory -
