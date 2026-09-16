@@ -1,281 +1,512 @@
-# git is a version control systems 
-* git helps you to maintain versions of a codebase.
+# Git is a version control system
+
+* Git is a distributed version control system (DVCS) used to track changes to files and manage the history of a project.
+* Git helps us maintain different versions of a codebase.
+* With Git, we can inspect the history of a repository and return to or work with previous versions when needed.
 
 /--------------------------------------------------------------------------------
 
-# Centralized and Distributed version control system.
+# Centralized and Distributed Version Control Systems
 
-1. Centralised system - The whole code history is present on this server 
-    * All the developer of a particular project contat to this server. 
-    * If one of the coder's connection gets failed then he will not be able to contact to the server.
+## 1. Centralized Version Control System
 
-2. Distributed system - Made to solve the problem of centralised system. 
-    * Git is a distributed version control system.
-    * In this every developer has the copy of the project.
-    * Every developer Push their changes to central/remote reposetory.
+* The main repository and its history are maintained on a central server.
+* Developers generally work with the central server when they need to share or retrieve changes.
+* If the central server or the connection to it is unavailable, operations that require the server may not be possible.
 
-/--------------------------------------------------------------------------------
+## 2. Distributed Version Control System
 
-# Git/Github
-
-1. Git :-
-* Git is Fast, Reliable and Easy to use.
-* Git also work ofline like in a flight you can comment and when you get internet you can push/pull that.
-* Git tracks the changes in your code and converts the folders into reposetory and tracks through that.
-* With git we can see the history of any reposetory.
-
-2. Github :- 
-* Github is a online platform where we host git reposetories.
-
-# How to use git 
-* there are mainly three ways - 
-1. through Terminal or in git bash - old way.
-2. through VS code 
-3. through Github Desktop software.
+* Git is a distributed version control system.
+* Each clone contains the project's files and its history, so many Git operations can be performed locally without an internet connection.
+* Developers can share their commits with a remote repository when they have a network connection.
+* A remote repository is commonly used for collaboration, but Git itself does not require a central server.
 
 /--------------------------------------------------------------------------------
 
-# Using git:- 
+# Git/GitHub
 
-* Big 4 commands - git init, git status, git add, git commit -m "Message".
+## 1. Git
 
-* After modifying we have to add and commit it.
+* Git is a fast, reliable, and widely used version control system.
+* Git works offline for many operations. For example, we can create commits, create branches, and inspect history without an internet connection. We need a network connection for operations involving a remote repository, such as push and fetch.
+* Git tracks changes to files inside a repository.
+* `git init` initializes a directory as a Git repository by creating a `.git` directory that stores Git's metadata and history.
+* With Git, we can see the history of a repository.
 
-* Commands in git:- 
-    1. git init - to initialze folder in a git.
-    2. git status - to check the status of the reposetory.
-    3. git diff - it spacifies what changes we have made and in which file we have made the changes.
+## 2. GitHub
 
-    4. git config --global user.name "Meet" 
-    5. git config --global user.email "meetummat@gmail.com" - if we commit or push some changes in repo then it tell everyone that these changes commit by Meet whose email is this.
-
-    6. git add index.html - moved index.html from working directory to staging area.
-    * we can also add many files with one git add command like "git add index.html style.css.
-    * git add . - we can add all the files in staging area with just "git add ." command.
-
-    7. git commit -m "Message" - now we have commited files with the message, we can come back to this step from any step because of commiting this stage. 
-    * we use "git commit with -m and with any message.
-
-    8. git log - to see the whole commits, this will show who commited that and also date and time.
-
-    9. git log --oneline - it will show one commit in one line not unecessary. Latest commit will come with (Head --> main), it may open in a pager if there are many commits then press "q" to close the log and return to terminal.
-    * with "git log --oneline -5 will show last 5 commits.
-
-    10. git restore --staged filename - with this command we can move file back to working directory from staging area.
-
-    11. .gitignore - If we want to not commit some file or folder then we have to make a file named ".gitignore" and write that file name or folder name in it and then git will ignore that file, that file will not be pushed.
-
-    12. .gitkeep :-
-    * git does not track the empty folders or empty     directories.
-    * If we want git to track that folders then we can a file   in that folders named ".gitkeep".
-
-    13. git branch branchname - this lets you make a new branch.
-
-    14. git branch - list all the branches within a repo, and tell that on which branch you are working on.
-
-    15. git switch branchname - this will switch to the other branch from main branch.
-
-    16. git merge branchname - After switching to main branch and using this command and then ":wq" we can merge branch to main branch. 
-
-    17. git branch -d branchname - to delete the ulternate branch.
-
-    18. git switch -c branchname - it will make a new branch as well as switch to that branch, basically it is combination of "git branch branchname" and "git switch branchname".
-
-    19. git stash - it will move modified file to stash. 
-
-    20. git stash list - it will list the stash.
-
-    21. git stash pop - gets back all the changes we did in files before moving them to stash.
-
-    22. git stash apply - with this previous changes will remain and stash and also comes back to use as it was before stashing.
-
-    23. git tag -a v1.0.0 -m "Message" - to make an annoteted tag.
-
-    24. git tag v1.0 - to make a lightweight tag
-
-    25. git tag - to list all the tags.
-
-    26. git rebase branchname - to use rebase in any branch, mainly used with merge.
-
-    27. git clone repo link - we can clone GitHub repo in git bash using link of HTTPS, SSH, GITHUB CLI. 
-
-    28. git remote -v - it shows to which remote repo of github your local git repo is connected to. 
-    * It gives the name of remote repo as "origin".
-
-    29. git push origin main - pushes commits to github, origin is the name of remote repo and main the branch name where we sending commits to.
-
-    30. git branch -M branchname - with this we can change the name of the branch we are working on. 
-
-    31. git config --global init.defaultBranch main - After this git bash will name every dafault branch as "main" like github.
-
-    32. git pull - to pull the files from github to git bash in our own local setup.
-    * All the commits will come in out main branch done by every person on that repo on github.
-    * git pull pulls the changes from github and merge that changes to working directory or main repo on git. 
-
-    33. git fetch - also to pull the files from github but it does not merge that to working directory or puts that file in local repo.
-
-
-# 4 main locations where code is present when we use git
-1. Working Directory -
-    * Once we run "git clone" or "git init" then we will have git reposetory in working directory.
-    * If we do some changes in our reposetory then still we will have that reposetory in working directory.
-
-2. Staging Area - 
-    * We move reposetory to Staging area by using "git add".
-    * In staging file are present to be saved as a commit in reposetory.
-
-3. Local Reposetory - 
-    * Then we commit those files with message with the "git commit".
-
-4. Remote Reposetory - 
-    * Then if we want to share those changes with team we push those to a remote location using "git push".
-    * if other members of team had made changes then we use "git pull" to access those files in our device.
-
-*  with using git commands we can move our file from one direction to other.
-* "git status" shows that in which stage which file is present.
+* GitHub is an online platform for hosting Git repositories and collaborating on software projects.
 
 /--------------------------------------------------------------------------------
 
-# Branching in Github :-
+# How to use Git
 
-* To use other branch instead of main branch then we can copy the components of main branch to other branch and then we can merge that to main branch and delete that other branch.
+* There are mainly three common ways to use Git:
+  1. Through Terminal or Git Bash.
+  2. Through VS Code.
+  3. Through GitHub Desktop.
 
-* Any changes we do within alternate branch after switching from main, if we again switch to main branch the main branch will remain as it was.
+Git Bash, VS Code, and GitHub Desktop are different interfaces for working with Git. They all use Git underneath.
 
-* And we can merge the other branch changes in the main branch by switching to main branch and then using merge command then ":wq"
+/--------------------------------------------------------------------------------
 
-* After that if we dont need the other branch anymore then we can delete that branch by "git branch -d branchname".
+# Using Git
 
-* While doing the work in alternate branch if anyone make any commits in the main branch then if we merge them, git will merge the commits as per the timeline like commit of other branch then commit of main branch then commit other branch not like all commits of main branch together and other branch together.
+* Four fundamental commands for a basic workflow are `git init`, `git status`, `git add`, and `git commit -m "Message"`.
+* After modifying files, we normally stage the changes and then commit them.
 
-# Best practice of Braching :-
-1. One feature = One branch --> Create a dedicated branch for each feature, bug fix, and improvement. 
+## Commands in Git
 
-2. Never develop directly on main --> Protect the main branch and keep it simple. All changes should go through pull request.
+1. `git init` - Initializes an existing directory as a Git repository.
 
-3. Delete merges branches - Once a branch is merged, delete it to keep the repo clean.
+2. `git status` - Shows the state of the working tree and staging area, including modified, staged, and untracked files.
 
-4. Use meaningful branch names --> Use clear, descriptive names that indicate ther purpose of the branch. 
+3. `git diff` - Shows the differences between the working tree and the staged version of the files. By default, it shows changes that have not yet been staged.
 
-5. Keep branches short-lived --> Merge your changes as soon as possible to reduce risk and conflicts.
+4. `git diff --cached --stat` - Shows a summary of the changes currently staged for the next commit, including the number of files changed and the number of lines added or removed.
 
-    * Good branching habits lead to a cleaner history, fewer conflicts, and a healthier codebase.
+5. `git config --global user.name "Your Name"` - Sets the name Git records in your commits.
 
-# Merge Conflict :-
-* when two different person modify the same file then we try to merge them the conflict occur.
+6. `git config --global user.email "you@example.com"` - Sets the email address Git records in your commits. This commit identity is separate from GitHub authentication.
 
-* If conflict happens then git will mark whats the changes of main branch and the other branch then we have resolve that by ourselves what we want to keep in that file and then add and commit.
+7. `git add index.html` - Stages the current changes to `index.html` for the next commit. The file is not physically moved from the working directory.
 
-/------------------------------------------------------------------------------------------------------------------------
+* We can stage multiple files with one command, for example:
+  `git add index.html style.css`
 
-# Stashing in Git :-
+* `git add .` - Stages all eligible changes under the current directory.
 
-* When we are working on something and then we have do other changes while this is not completed then we can use stash
+8. `git commit -m "Message"` - Creates a commit containing the changes currently staged in the index and records that snapshot in the repository's history.
 
-* We can store the changes in stash temp. and then we can work on other changes after that we can go to that changes again using stash.
+* We use `git commit -m "Message"` to create a commit with a message describing the changes.
 
-/------------------------------------------------------------------------------------------------------------------------
+9. `git log` - Shows the commit history, including commit IDs, authors, dates, and commit messages.
 
-# Tagging in git :-
-* Tags in git are used to make a mark on commits, or to mark releases.
+10. `git log --oneline` - Shows a shorter version of the commit history, usually with one commit per line. The latest commit is pointed to by `HEAD` and the current branch.
 
-* Two types of tags in git :-
-1. Annoteted tag --> Stores metadata (tagger, date, message)
-    * More info and secure (can be GPG signed)
-    * Recommended for releases.
-    * "git tag -a v1.0.0 -m "Release version 1.0.0"
+* `git log --oneline -5` shows the latest 5 commits.
+* If Git opens a pager, press `q` to return to the terminal.
 
-2. Lightweight tag --> just a pointer to a commit 
-    * No extra metadata 
-    * Best for temporary or private use.
-    * "git tag v1.0"
+11. `git restore --staged filename` - Unstages the specified file while keeping its changes in the working tree.
 
-/------------------------------------------------------------------------------------------------------------------------
+12. `.gitignore` - A file that specifies untracked files and directories that Git should normally ignore. It does not automatically stop tracking a file that has already been committed.
 
-# Git Rebase :-
+13. `git check-ignore -v "Single User Setup/Github and Github Desktop/filename"` - Checks whether the specified file is being ignored by Git and shows the `.gitignore` rule and file responsible for ignoring it.
 
-* We use rebase to avoid so many merge commits in a git.
-* We know that if we are working on two separate branches then git will track the commits as per timeline if we merge them like which commit happened first comes first,
-* like we made commit in other branch then made the commit in main branch then we have to use "git rebase main' in the other branch and then to switch to main and merge then we will see that other branch's commit comes after the main branch's commit even if we made it before the main branch's commit.
+14. `.gitkeep` - Git does not track empty directories. `.gitkeep` is a common convention for placing a file inside an otherwise empty directory so that the directory can be represented in the repository.
 
-/------------------------------------------------------------------------------------------------------------------------
+15. `git branch branchname` - Creates a new branch at the current commit but does not switch to it.
 
-# Using GitHub to Host our Reposetories :-
+16. `git branch` - Lists the local branches and marks the currently checked-out branch.
 
-* We use github to host reposetories.
-* readme.md is a markdown file for our repo on github so write it carefully everytime.
-* gitignore option - we can use this file and select which tech's gitignore file we want to make and git will make and give that file.
-* with git pull we can fetch all the files from the repo of github to out local repo.
+17. `git switch branchname` - Switches to the specified existing branch.
 
-/------------------------------------------------------------------------------------------------------------------------
+18. `git merge branchname` - Merges the specified branch into the current branch. If Git opens Vim for a commit message, `:wq` saves the message and exits Vim. `:wq` itself does not perform the merge.
 
-# Using Github Desktop :-
-* We can connect vs code with the Github and can easily make changes, stage unstage and commit through it in the github desktop.
+19. `git branch -d branchname` - Deletes a local branch that has already been merged.
 
-* Public repo and Private repo - If anyone tries to open the public repo in incognito then it will open but, private repo will not open.
+20. `git switch -c branchname` - Creates a new branch and immediately switches to it. It combines branch creation and switching.
 
-* We can also make new branches easily and when we try to merge those branch in the main branch then then we have to preview pull request.
-* Pull request - it is a req that we want to merge other branch to main branch, if someone changes in our repo then he will create a pull req then we have to see and merge that changes if we want in our mian repo.
+21. `git stash` - Temporarily stores supported uncommitted changes so that we can work on something else without committing those changes.
 
-* We can also do rebasing in github desktop.
+22. `git stash list` - Lists the stashes currently stored in the repository.
 
-* If we click on fetch origin then if someone has made the changes then those will be pulled.
+23. `git stash pop` - Applies the most recent stash and removes it from the stash list if the operation succeeds.
 
-* History feature shows all the commits we have made throughout.
+24. `git stash apply` - Applies the most recent stash but keeps the stash in the stash list.
 
-# Forking :- 
+25. `git tag -a v1.0.0 -m "Message"` - Creates an annotated tag containing additional metadata such as the tagger, date, and message.
 
-* If we want to make any meaningful changes in the repo which are already present on github, then we can fork that repo and then in the github desktop we can clone that repo and can make commits and changes and then we can create pull request so that if owner of that repo thinks this changes is meaningful he can merge those changes into original repo.
+26. `git tag v1.0` - Creates a lightweight tag, which is simply a reference to a commit without the additional metadata of an annotated tag.
 
-* If we had made some meaningfull changes then we have to go to Pull request option on github and from there we can create new pull request and then can send req to owner of that repo.
+27. `git tag` - Lists the tags in the repository.
 
-/------------------------------------------------------------------------------------------------------------------------
+28. `git rebase branchname` - Replays the commits of the current branch on top of the specified branch. Rebase can create a more linear history, but it rewrites commit history and should be used carefully on shared branches.
 
-# Using git in vs code :-
+29. `git clone <repository-url>` - Creates a local copy of a Git repository, including its files and history. A repository can be cloned using an HTTPS or SSH URL. GitHub CLI provides a separate command, `gh repo clone owner/repository`.
 
-* We can commit push pull through vs code only.
+30. `git remote -v` - Shows the remote repositories configured for the local repository and their URLs.
 
-* We can make new branch and all by clicking on the branchname below on the screen.
+* `origin` is the conventional default name given to the remote when a repository is cloned. It is a remote name, not the name of GitHub itself.
 
-* M means the file is modified.
-* U meand the file is untracked.
-* By clicking on git icon and then "+" then we can stage that file and then can commit.
+31. `git push origin main` - Pushes the local `main` branch's commits to the remote named `origin`, updating its `main` branch.
 
-* Always use commit in present tense - not added filed but use add files.
+32. `git branch -M branchname` - Renames the current branch to the specified name. The `-M` option forces the rename if necessary.
 
-* then is we click sync changes then it will push the changes to github.
+33. `git config --global init.defaultBranch main` - Configures Git to use `main` as the default initial branch name when creating new repositories with `git init`.
 
-* With "git graph" extecsion we can see the graph of branches and commits, in the vs code.
+34. `git pull` - Fetches changes from a remote repository and then integrates those changes into the current branch. Depending on the configuration and options, the integration can use a merge or rebase.
 
-* After that if merge conflict happens then it shows that in which file it happened and also gives the option that what changed you want to accept current or upcoming or we can edit file ourselves.
-* And then stage and continue.
+35. `git fetch` - Downloads new commits and updates remote-tracking references such as `origin/main`, but does not integrate those changes into the current branch or modify the working files.
 
-* If 2 or more person working on a same project then with the collaborator option we can collaborate with them.
-* And if we want to assign work then we can create issue and assign issue to them and check their work.
+36. `git rm --cached -r SingleUserSetup` - Removes `SingleUserSetup` from Git's index while keeping the actual folder and its files on the computer. This can be useful when a folder was accidentally staged as a repository/reference and we want to re-add its contents normally.
 
-* Then they will create pull request after working and we can preview that req and merge to main branch.
+37. `git rm --cached -r -f SingleUserSetup` - Force-removes `SingleUserSetup` from the Git index while keeping the files on the computer. Use this when the normal `git rm --cached -r` is blocked because the staged content differs from the working tree or `HEAD`.
 
-* And we can commment in the issues and then when its done we can close the issue, with merging the pull req.
+38. `find . -type d -name ".git"` - Searches from the current directory and lists every `.git` directory. This is useful for checking whether there are nested Git repositories.
 
-/------------------------------------------------------------------------------------------------------------------------
+39. `rm -rf "./SingleUserSetup/.git"` - Removes the `.git` directory inside `SingleUserSetup` while keeping the `SingleUserSetup` folder and its other files. This converts that folder from a separate Git repository into an ordinary folder. Use this only when you intentionally want to remove that nested repository's Git history and metadata.
 
-# Modern git workflow:- 
+/--------------------------------------------------------------------------------
 
-* We can use AI within github to write commits for us, with the star button in the commit message box.
+# 4 Main Locations When We Use Git
 
-* Also we can make another branch where we have worked with AI and the main branch where we have worked ourselves then which work is good commit and use that.
+## 1. Working Directory
 
-/------------------------------------------------------------------------------------------------------------------------
+* The working directory (working tree) contains the files we currently work on.
+* After `git clone`, the repository's files are placed in the working directory.
+* After `git init`, the existing project files remain in the working directory and Git starts tracking their changes.
 
-# Conclusion :-
-* Git is best tool to manage the codebase.
+## 2. Staging Area
 
-* Always use present tense in commit messages, and commit messages should be meaningful.
+* The staging area (also called the index) contains the changes that are prepared for the next commit.
+* We stage changes using `git add`.
 
-* Make branches for every feature and for short time work merge and delete it.
+## 3. Local Repository
 
-* Put secrets and passwords in .env file and put in .gitignore and dont push .env on github.
+* When we run `git commit`, the staged changes are recorded as a commit in the local repository's history.
 
-* Always review the code before commit.
+## 4. Remote Repository
 
-/------------------------------------------------------------------------------------------------------------------------
+* A remote repository is a repository hosted somewhere else, commonly on a service such as GitHub.
+* We can share our local commits with the remote repository using `git push`.
+* If other contributors have pushed changes to the remote, we can use `git fetch` to retrieve the remote updates or `git pull` to fetch and integrate them.
+
+* Git commands allow us to move changes through the workflow:
+  `Working Tree → Staging Area → Local Repository → Remote Repository`
+* `git status` helps us understand which files have changes and whether those changes are staged.
+
+/--------------------------------------------------------------------------------
+
+# Branching in GitHub
+
+* A branch is a movable reference to a commit. When a new branch is created, it initially points to the current commit. New commits then move that branch forward.
+* A branch is not simply a separate copy of the project files.
+* Changes made on one branch do not automatically appear on another branch until the histories are integrated, for example through merge or rebase.
+* To merge a branch into `main`, first switch to `main` and then run `git merge branchname`.
+* If Git opens Vim for a merge commit message, `:wq` saves the message and exits Vim.
+* After a branch has been merged and is no longer needed, it can be deleted with `git branch -d branchname`.
+
+* If `main` and another branch both receive commits after they diverge, Git combines their histories based on their common ancestor and the changes made on each branch. It does not simply merge commits according to their chronological order.
+
+/--------------------------------------------------------------------------------
+
+# Best Practices of Branching
+
+1. **One feature = one branch** → Create a dedicated branch for a feature, bug fix, or other isolated change when appropriate.
+
+2. **Protect `main` in collaborative projects** → Teams commonly protect the main branch and use feature branches and pull requests for changes. Direct commits to `main` are possible, especially in small personal projects.
+
+3. **Delete merged branches** → Once a branch is merged and no longer needed, delete it to keep the repository clean.
+
+4. **Use meaningful branch names** → Use clear, descriptive names that indicate the purpose of the branch, such as `feature/login`, `fix/navbar`, or `docs/git-notes`.
+
+5. **Keep branches reasonably short-lived** → Integrate changes regularly to reduce the chance of large conflicts and difficult merges.
+
+* Good branching habits can lead to a cleaner history, easier collaboration, and fewer conflicts.
+
+/--------------------------------------------------------------------------------
+
+# Merge Conflict
+
+* A merge conflict occurs when Git cannot automatically reconcile changes between branches. This often happens when overlapping parts of a file have been changed differently.
+* Two people can modify the same file without causing a conflict if Git can combine their changes automatically.
+* When a conflict occurs, Git marks the conflicting sections in the file. We must resolve the conflict, stage the resolved file, and complete the merge or rebase.
+
+/--------------------------------------------------------------------------------
+
+# Stashing in Git
+
+* When we are working on something and need to switch to another task before the current work is ready to commit, we can use `git stash`.
+* A stash temporarily stores supported uncommitted changes so that we can work on another task.
+* Later, we can reapply the changes with commands such as `git stash apply` or `git stash pop`.
+
+* `git stash pop` → apply the stash and remove it if successful.
+* `git stash apply` → apply the stash and keep it in the stash list.
+
+/--------------------------------------------------------------------------------
+
+# Tagging in Git
+
+* Tags are references used to mark specific commits, commonly for releases or important points in a project's history.
+* There are two common types of tags:
+
+## 1. Annotated Tag
+
+* Stores additional metadata such as tagger, date, and message.
+* Annotated tags can also be signed.
+* They are commonly used for releases.
+
+```bash
+git tag -a v1.0.0 -m "Release version 1.0.0"
+```
+
+## 2. Lightweight Tag
+
+* A lightweight tag is simply a reference to a commit.
+* It does not contain the additional metadata of an annotated tag.
+* It can be useful when a simple pointer to a commit is enough.
+
+```bash
+git tag v1.0
+```
+
+* Creating a tag locally does not automatically publish it to GitHub. To push a specific tag:
+
+```bash
+git push origin v1.0.0
+```
+
+/--------------------------------------------------------------------------------
+
+# Git Rebase
+
+* Rebase replays a series of commits onto a new base commit.
+* Rebase can produce a more linear project history and can reduce unnecessary merge commits.
+* Rebase rewrites the commits that are replayed, so their commit IDs can change.
+* Be careful when rebasing commits that have already been shared with other people.
+
+Example:
+
+```text
+Before:
+
+A---B---C        main
+     \\
+      D---E      feature
+
+After `git rebase main`:
+
+A---B---C---D'---E'    feature
+```
+
+* After rebasing, the feature branch can be merged into `main` using a fast-forward merge when appropriate.
+
+## Basic Rebase Command
+
+First switch to the branch you want to rebase:
+
+```bash
+git switch feature
+```
+
+Then rebase it onto `main`:
+
+```bash
+git rebase main
+```
+
+Here, the commits on `feature` are replayed on top of the latest commit in `main`.
+
+## Interactive Rebase
+
+Interactive rebase lets us inspect and modify a series of commits.
+
+```bash
+git rebase -i HEAD~3
+```
+
+Common options include:
+
+* `pick` → Keep the commit.
+* `reword` → Keep the commit but change its message.
+* `edit` → Pause so the commit can be modified.
+* `squash` → Combine the commit with the previous commit.
+* `drop` → Remove the commit.
+
+## Rebase with the Remote Branch
+
+A common workflow is:
+
+```bash
+git fetch origin
+git switch feature
+git rebase origin/main
+```
+
+`git fetch origin` updates our local information about the remote. `git rebase origin/main` then replays the feature commits on top of the fetched `main`.
+
+## Handling a Rebase Conflict
+
+If Git stops because of a conflict:
+
+```bash
+git status
+```
+
+Resolve the conflicting file in your editor, then stage the resolved file:
+
+```bash
+git add filename
+```
+
+Continue the rebase:
+
+```bash
+git rebase --continue
+```
+
+If you want to cancel the rebase:
+
+```bash
+git rebase --abort
+```
+
+## Rebase vs Merge
+
+Merge:
+
+```bash
+git switch feature
+git merge main
+```
+
+Rebase:
+
+```bash
+git switch feature
+git rebase main
+```
+
+Merge combines the histories and may create a merge commit. Rebase replays the feature commits on top of `main`, creating a more linear history.
+
+## Rebase in GitHub Desktop
+
+GitHub Desktop provides a graphical rebase workflow.
+
+1. Switch to the branch you want to rebase.
+2. Select **Branch → Rebase Current Branch**.
+3. Select the branch you want to rebase onto.
+4. Click **Rebase**.
+5. Confirm by clicking **Begin Rebase**.
+6. If conflicts occur, resolve them in your editor and continue the rebase.
+7. If the branch was already pushed, GitHub Desktop may show **Force push origin** after the rebase.
+
+GitHub Desktop also provides **Pull origin with rebase** when we want to pull remote changes while replaying our local commits on top.
+
+## Rebase in VS Code
+
+In VS Code, we can use the Source Control menu for a pull with rebase:
+
+1. Open **Source Control**.
+2. Select **More Actions (...)**.
+3. Select **Pull (Rebase)**.
+4. VS Code fetches the remote changes and replays the local commits on top.
+
+We can also use the VS Code integrated terminal:
+
+```bash
+git fetch origin
+git switch feature
+git rebase origin/main
+```
+
+If a conflict occurs:
+
+```bash
+git status
+git add filename
+git rebase --continue
+```
+
+To cancel:
+
+```bash
+git rebase --abort
+```
+
+## Force Push After Rebase
+
+If a branch that was already pushed is rebased, the remote history may no longer match the local history.
+
+Prefer:
+
+```bash
+git push --force-with-lease origin feature
+```
+
+`--force-with-lease` is safer than a plain `--force` because it checks whether the remote branch has changed unexpectedly.
+
+## Important Rebase Warning
+
+Avoid rebasing a shared/public branch unless the team has agreed to rewrite its history. Rebase is safest on your own feature branch before other people depend on its commit history.
+
+/--------------------------------------------------------------------------------
+
+# Using GitHub to Host Our Repositories
+
+* GitHub can host Git repositories and provides features for collaboration, such as pull requests, issues, code review, and branch protection.
+* `README.md` is a Markdown file commonly used to explain a repository, including its purpose, setup instructions, usage, and other useful information.
+* GitHub can help generate a `.gitignore` template for a selected language or framework.
+* `git pull` can be used to fetch remote changes and integrate them into the current branch.
+
+/--------------------------------------------------------------------------------
+
+# Using GitHub Desktop
+
+* GitHub Desktop provides a graphical interface for many Git operations such as viewing changes, staging, committing, branching, fetching, pulling, pushing, and creating pull requests.
+* VS Code can be used together with GitHub Desktop for editing code while GitHub Desktop handles many Git operations.
+* A public repository can generally be viewed by anyone, including users who are not signed in. A private repository requires appropriate access.
+* We can create new branches easily and create pull requests when we want to propose changes for another branch.
+* A pull request is a proposal to merge changes from one branch (the head branch) into another branch (the base branch). The base branch does not have to be `main`.
+* We can also perform certain rebase operations through GitHub Desktop.
+* To rebase the current branch, use **Branch → Rebase Current Branch**, choose the branch to rebase onto, and follow the **Rebase → Begin Rebase** steps.
+* If conflicts occur during the rebase, resolve them and continue the rebase. If a previously pushed branch was rebased, GitHub Desktop may require **Force push origin** to update the remote.
+* **Pull origin with rebase** can be used when we want remote changes to be applied first and our local commits replayed on top.
+* `Fetch origin` downloads information about new commits from the remote and updates remote-tracking information. It does not automatically integrate those changes into the current branch.
+* The History feature shows the commits in the repository.
+
+/--------------------------------------------------------------------------------
+
+# Forking
+
+* A fork is a personal copy of another user's or organization's repository under your GitHub account.
+* If we want to contribute to a repository where we do not have direct write access, we can fork it, clone our fork, create changes, commit them, push them to our fork, and then create a pull request to the original repository.
+* The owner or maintainers of the original repository can review the pull request and decide whether to merge it.
+* A pull request can be created from the GitHub website after pushing the changes to the fork.
+
+/--------------------------------------------------------------------------------
+
+# Using Git in VS Code
+
+* VS Code provides a graphical interface for many Git operations, including viewing changes, staging, committing, branching, pulling, and pushing.
+* We can create or switch branches using the branch controls in VS Code.
+* `M` means the file is modified.
+* `U` means the file is untracked.
+* By clicking the Git/Source Control icon and then `+`, we can stage a file and then commit the staged changes.
+* Commit messages should be clear and commonly use the imperative/present form, for example `Add files`, `Fix login bug`, or `Update README`.
+* `Sync Changes` in VS Code synchronizes the local branch with its configured remote and may involve pulling and pushing changes, depending on the repository state and settings.
+* To pull using rebase in VS Code, open **Source Control → More Actions (...) → Pull (Rebase)**.
+* We can also use the VS Code integrated terminal for rebase commands such as `git fetch origin`, `git switch feature`, and `git rebase origin/main`.
+* If a rebase conflict occurs, resolve the file, stage it, and run `git rebase --continue`; use `git rebase --abort` to cancel the rebase.
+* With a Git Graph extension, we can visualize branches, commits, and their relationships.
+* When a merge conflict occurs, VS Code can show the conflicting files and provide options such as accepting the current change, incoming change, both changes, or manually editing the file.
+* After resolving a conflict, stage the resolved files and complete the merge or rebase.
+* For collaboration, GitHub provides features such as collaborators, issues, and pull requests.
+* Issues can be used to describe tasks, bugs, or improvements and assign work to contributors.
+* After completing the work, a contributor can create a pull request for review and possible merging.
+* Issues can be discussed and closed when the related work is completed.
+
+/--------------------------------------------------------------------------------
+
+# Modern Git Workflow
+
+* GitHub and other development tools can provide AI-assisted features, such as generating suggested commit messages.
+* AI-generated commit messages should still be reviewed to make sure they accurately describe the changes.
+* When using AI-assisted development, keep changes isolated in branches when appropriate, review the generated code, test it, and commit only changes that you understand and want to keep.
+
+/--------------------------------------------------------------------------------
+
+# Conclusion
+
+* Git is a widely used tool for managing versions and collaborating on codebases.
+* Use clear, meaningful commit messages. Imperative/present-style messages such as `Add login page` or `Fix navbar bug` are common.
+* Use branches for isolated features, bug fixes, or experiments when appropriate, especially in collaborative projects.
+* Store secrets outside source code when possible. During local development, environment variables or `.env` files can be used, and `.env` should normally be included in `.gitignore`.
+* Never commit passwords, API keys, tokens, or other secrets to a public repository.
+* If a secret is accidentally committed, simply deleting the file is not enough; the exposed credential should be revoked or rotated.
+* Always review your changes before committing them.
+* Use `git diff` to review unstaged changes and `git diff --cached` to review staged changes before committing.
+
+/--------------------------------------------------------------------------------
+
